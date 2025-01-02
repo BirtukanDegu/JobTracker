@@ -9,7 +9,7 @@ interface Props {
 
 export default function CustomProvider({ children }: Props) {
   return (
-    <ThemeProvider>
+    <ThemeProvider defaultTheme="dark">
       <ReduxProvider>
         {children}
       </ReduxProvider>

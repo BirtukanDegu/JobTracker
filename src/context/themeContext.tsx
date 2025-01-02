@@ -22,14 +22,14 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
 
 export function ThemeProvider({
   children,
-  defaultTheme = "system",
+  defaultTheme = "dark",
   storageKey = "job-tracker-theme",
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
     () => {
       if (typeof window !== 'undefined') {
-        return localStorage.getItem(storageKey) as Theme;
+        return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
       }
       return defaultTheme;
     },

@@ -65,7 +65,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h1
-              className="text-8xl lg:text-9xl font-black tracking-tighter mb-8"
+              className="text-6xl lg:text-9xl font-black tracking-tighter mb-8"
               style={{
                 background: "linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #4ecdc4  50%, #44a08d 75%, #ff6b35 100%)",
                 backgroundSize: "400% 400%",

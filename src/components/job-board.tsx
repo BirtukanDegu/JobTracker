@@ -29,7 +29,7 @@ export function JobBoard() {
   )
 
   return (
-    <div className="flex gap-4 p-4 md:p-6 mt-24 overflow-x-auto overflow-y-hidden scrollbar">
+    <div className="flex gap-4 p-4 md:p-6 mt-44 md:mt-24 overflow-x-auto overflow-y-hidden scrollbar">
       {columns.map((column, index) => {
         const columnJobs = jobs.filter((job) => job.columnId === column.id)
 

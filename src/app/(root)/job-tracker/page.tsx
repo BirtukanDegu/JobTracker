@@ -84,31 +84,42 @@ export default function Dashboard() {
 
   return (
     <main className="flex flex-col">
-      <div className="mb-6 fixed flex items-center justify-between w-[100vw] p-4 md:p-6">
-        <div className="flex items-center gap-2">
-          <Link href="/" className="flex items-center justify-center gap-3 mx-auto">
-            <Image src={theme === "dark" ? "/logo-white.svg" : "/logo.svg"} width={80} height={80} alt="logo" className="size-12 text-white" />
-          </Link> 
+      <div className="fixed w-full px-4 py-3 md:px-6 md:py-4 bg-background z-50 shadow-sm">
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <Link href="/">
+              <Image
+                src={theme === "dark" ? "/logo-white.svg" : "/logo.svg"}
+                width={80}
+                height={80}
+                alt="logo"
+                className="size-12 text-white"
+              />
+            </Link>
+            <div>
+              <h1 className="text-xl font-bold">Job Tracker</h1>
+              <p className="text-sm text-muted-foreground">
+                Track and manage all your job applications in one place.
+              </p>
+            </div>
+          </div>
 
-          <div>
-            <h1 className="text-2xl font-bold">Job Tracker</h1>
-            <p className="text-muted-foreground">Track and manage all your job applications in one place.</p>
-          </div>                 
-        </div>
+          <div className="flex flex-wrap items-center gap-2">
+            <Button variant="outline" size="sm" onClick={() => dispatch(toggleAddColumnDialog())}>
+              <Plus className="mr-2 size-4" />
+              Add Column
+            </Button>
+            <Button size="sm" onClick={() => dispatch(toggleAddJobDialog())}>
+              <Plus className="mr-2 size-4" />
+              Add Job
+            </Button>
+            <Button variant="ghost" size="icon">
+              <ThemeToggle />
+              <span className="sr-only">Theme toggle</span>
+            </Button>
+          </div>
 
-        <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" onClick={() => dispatch(toggleAddColumnDialog())}>
-            <Plus className="mr-2 size-4" />
-            Add Column
-          </Button>
-          <Button size="sm" onClick={() => dispatch(toggleAddJobDialog())}>
-            <Plus className="mr-2 size-4" />
-            Add Job
-          </Button>
-          <Button variant="ghost" size="icon">
-            <ThemeToggle />
-            <span className="sr-only">Theme toggle</span>
-          </Button>
         </div>
       </div>
 

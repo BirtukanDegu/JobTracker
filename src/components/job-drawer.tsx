@@ -199,7 +199,7 @@ export function JobDrawer({ open, onOpenChange, job, mode }: JobDrawerProps) {
             </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-6 py-6">
+          <div className="flex-1 overflow-y-auto px-6 py-6 scrollbar">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 <FormField
